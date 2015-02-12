@@ -1,0 +1,724 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Bug Tickets\n"
+"POT-Creation-Date: 2015-02-10 11:35+0100\n"
+"PO-Revision-Date: 2015-02-10 11:36+0100\n"
+"Last-Translator: Bastien Ho <bastienho@urbancube.fr>\n"
+"Language-Team: bastho <bastienho@urbancube.fr>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;_e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: ../css.php:138 ../css.php:283 ../css.php:294
+msgid "CSS addons"
+msgstr "Greffons CSS"
+
+#: ../css.php:158
+msgid "What are you doing over there ?"
+msgstr "Que faites vous ici ?"
+
+#: ../css.php:161
+msgid "Security error"
+msgstr "Erreur de sécurité"
+
+#: ../css.php:209
+msgid "Available CSS addons have been saved !"
+msgstr "Les greffons CSS disponibles ont été sauvegardés !"
+
+#: ../css.php:213
+msgid "Available CSS addons"
+msgstr "Greffons CSS disponibles"
+
+#: ../css.php:220
+msgid "Slug"
+msgstr "Identifiant"
+
+#: ../css.php:221
+msgid "Name"
+msgstr "Nom"
+
+#: ../css.php:222
+msgid "Description"
+msgstr "Description"
+
+#: ../css.php:223
+msgid "CSS"
+msgstr "CSS"
+
+#: ../css.php:241
+msgid "Add"
+msgstr "Ajouter"
+
+#: ../css.php:242
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: ../css.php:305
+msgid "Custom CSS"
+msgstr "CSS personnalisée"
+
+#~ msgid "Recent public tickets"
+#~ msgstr "Ticket publics récents"
+
+#~ msgid "Not ticket here, this is an error..."
+#~ msgstr "Pas de ticket ici, c'est une erreur..."
+
+#~ msgid "Open"
+#~ msgstr "Ouvert"
+
+#~ msgid "Closed"
+#~ msgstr "Cloturé"
+
+#~ msgid "Ticket"
+#~ msgstr "Ticket"
+
+#~ msgid "tickets"
+#~ msgstr "Tickets"
+
+#~ msgid "ticket"
+#~ msgstr "Ticket"
+
+#~ msgid "Edit"
+#~ msgstr "Editer"
+
+#~ msgid "Edit ticket"
+#~ msgstr "Editer le ticket"
+
+#~ msgid "New ticket"
+#~ msgstr "Nouveau Ticket"
+
+#~ msgid "View"
+#~ msgstr "Voir"
+
+#~ msgid "Preview ticket"
+#~ msgstr "prévisualiser le Ticket"
+
+#~ msgid "Search a ticket"
+#~ msgstr "Chercher un ticket"
+
+#~ msgid "No entry has been made"
+#~ msgstr "Aucune entrée"
+
+#~ msgid "No ticket Found in Trash"
+#~ msgstr "La corbeille à tickets est vide"
+
+#~ msgid "Parent ticket"
+#~ msgstr "Tickets parent"
+
+#~ msgid "Ticket types"
+#~ msgstr "Type de tickets"
+
+#~ msgid "Ticket type"
+#~ msgstr "Type de signalement :"
+
+#~ msgid "Search Ticket type"
+#~ msgstr "Chercher un type de ticket"
+
+#~ msgid "All Ticket types"
+#~ msgstr "Tous les types de tickets"
+
+#~ msgid "Edit Ticket type"
+#~ msgstr "Editer le type de ticket"
+
+#~ msgid "Update Ticket type"
+#~ msgstr "Mettre à jour le type de ticket"
+
+#~ msgid "Add new Ticket type"
+#~ msgstr "Nouveau  type de ticket"
+
+#~ msgid "New Ticket type"
+#~ msgstr "Nouveau type de ticket"
+
+#~ msgid "Ticket has been re-open"
+#~ msgstr "Le ticket a été réouvert"
+
+#~ msgid "Ticket has been closed"
+#~ msgstr "Le ticket a été cloturé"
+
+#~ msgid "Ticket has been moved to trash"
+#~ msgstr "Le ticket a été déplacé à la corbeille"
+
+#~ msgid "Support Tickets"
+#~ msgstr "Tickets Support"
+
+#~ msgid "Options"
+#~ msgstr "Options"
+
+#~ msgid "hour"
+#~ msgstr "heure"
+
+#~ msgid "hours"
+#~ msgstr "heures"
+
+#~ msgid "minute"
+#~ msgstr "minute"
+
+#~ msgid "minutes"
+#~ msgstr "minutes"
+
+#~ msgid "No time lost"
+#~ msgstr "Pas de temps perdu"
+
+#~ msgid "None"
+#~ msgstr "Aucun"
+
+#~ msgid "%s spent on this."
+#~ msgstr "%s passé dessus"
+
+#~ msgid "Sorry, this ticket is untraceable..."
+#~ msgstr "Désolé, ce ticket est introuvable"
+
+#~ msgid "Support ticket"
+#~ msgstr "Ticket Support"
+
+#~ msgid "Back to support tickets list"
+#~ msgstr "Retour à la liste des tickets support"
+
+#~ msgid "Informations"
+#~ msgstr "Informations"
+
+#~ msgid "Process"
+#~ msgstr "Traiter"
+
+#~ msgid "Spent time"
+#~ msgstr "Temps passé"
+
+#~ msgid "Re-open this ticket ?"
+#~ msgstr "Ré-ouvrir ce ticket ?"
+
+#~ msgid "Close this ticket ?"
+#~ msgstr "Cloturer ce ticket ?"
+
+#~ msgid "Reply to this ticket"
+#~ msgstr "Répondre à ce ticket"
+
+#~ msgid "For information, you've opened this page %s ago."
+#~ msgstr "Pour information, vous avez ouvert cette page il y a %s."
+
+#~ msgid "Send"
+#~ msgstr "Envoyer"
+
+#~ msgid "Technical details"
+#~ msgstr "Détails techniques"
+
+#~ msgid "Delete this ticket ?"
+#~ msgstr "Supprimer ce ticket ?"
+
+#~ msgid "All"
+#~ msgstr "Tous"
+
+#~ msgid "Trash"
+#~ msgstr "Corbeille"
+
+#~ msgid "Title"
+#~ msgstr "Titre"
+
+#~ msgid "Type"
+#~ msgstr "Type"
+
+#~ msgid "Page"
+#~ msgstr "Page"
+
+#~ msgid "Priority"
+#~ msgstr "Priorité"
+
+#~ msgid "Assigned"
+#~ msgstr "Assigné"
+
+#~ msgid "User"
+#~ msgstr "Utilisat-eur/rice"
+
+#~ msgid "Date"
+#~ msgstr "Date"
+
+#~ msgid "Answers"
+#~ msgstr "Réponses"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Actions"
+#~ msgstr "Actions"
+
+#~ msgid "Private"
+#~ msgstr "Privé"
+
+#~ msgid "Close"
+#~ msgstr "Cloturer"
+
+#~ msgid "Re-Open"
+#~ msgstr "Ré-Ouvrir"
+
+#~ msgid "Delete"
+#~ msgstr "Supprimer"
+
+#~ msgid "Low"
+#~ msgstr "Bas"
+
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid "High"
+#~ msgstr "Haut"
+
+#~ msgid "Critical"
+#~ msgstr "Critique"
+
+#~ msgid "seconds"
+#~ msgstr "secondes"
+
+#~ msgid "Level"
+#~ msgstr "Niveau"
+
+#~ msgid "Status:"
+#~ msgstr "Status :"
+
+#~ msgid "Go back to ticket"
+#~ msgstr "Retourner au ticket"
+
+#~ msgid "Reporter"
+#~ msgstr "Rapport-eur/se"
+
+#~ msgid "Public"
+#~ msgstr "Publique"
+
+#~ msgid "Merged tickets :"
+#~ msgstr "Tickets fusionnés :"
+
+#~ msgid "Assigned to:"
+#~ msgstr "Assigné à :"
+
+#~ msgid "Assign"
+#~ msgstr "Assigner"
+
+#~ msgid "Change"
+#~ msgstr "Changer"
+
+#~ msgid "Merge with another ticket"
+#~ msgstr "Fusionner avec un autre ticket"
+
+#~ msgid "Merged with ticket #%d : %s"
+#~ msgstr "Fusionné avec le ticket #%d : %s"
+
+#~ msgid "Environment"
+#~ msgstr "Environement"
+
+#~ msgid "User Agent:"
+#~ msgstr "User agent :"
+
+#~ msgid "Public URL"
+#~ msgstr "URL publique"
+
+#~ msgid "Case URL"
+#~ msgstr "URL du cas"
+
+#~ msgid "No POST variables"
+#~ msgstr "Pas de variables POST"
+
+#~ msgid "Open tickets"
+#~ msgstr "Tickets ouverts"
+
+#~ msgid "Closed tickets"
+#~ msgstr "Tickets fermés"
+
+#~ msgid "YAST Support-Tickets options saved !"
+#~ msgstr "Les options de tickets support ont bien été sauvegardées !"
+
+#~ msgid ""
+#~ "Do you really want to autorize any form of this webiste to send datas to "
+#~ "YAST ? This might be a big security issue !"
+#~ msgstr ""
+#~ "Voulez vous vraiment autoriser tout formulaire de ce site même à envoyer "
+#~ "des données à YAST ? ça peut être une grosse faille de sécurité !"
+
+#~ msgid "Support Tickets Options"
+#~ msgstr "Options de tickets support"
+
+#~ msgid "Alerts"
+#~ msgstr "Alertes"
+
+#~ msgid "Send email alert to:"
+#~ msgstr "Envoyer une alerte courriel à :"
+
+#~ msgid "Support Form"
+#~ msgstr "Formulaire de support"
+
+#~ msgid "Ticket type to use in adminbar"
+#~ msgstr "Type de ticket dans la bar d'administration"
+
+#~ msgid "Force SSL"
+#~ msgstr "Forcer SSL"
+
+#~ msgid "No"
+#~ msgstr "Non"
+
+#~ msgid "Yes"
+#~ msgstr "Oui"
+
+#~ msgid "Trusted hosts"
+#~ msgstr "Serveurs de confiance"
+
+#~ msgid ""
+#~ "One host per line, without http://, Datas sent from these sites will be "
+#~ "registered without verification"
+#~ msgstr ""
+#~ "Un nom de serveur par ligne, sans http://. Les données envoyées depuis "
+#~ "ces sites seront enregistrées sans vérification"
+
+#~ msgid ""
+#~ "To integrate a form in one of these sites, use one the following codes. "
+#~ "YOu can customize form by changing the URL parameters."
+#~ msgstr ""
+#~ "Pour intégrer un formulaire dans un de ces sites, utilisez un des codes "
+#~ "suivant. Vous pouvez personnaliser les formulaire en changeant les "
+#~ "paramètres dans l'URL."
+
+#~ msgid "Click here to see more documentation about this feature."
+#~ msgstr ""
+#~ "Cliquez ici pour voir plus de documentation à propos de cette "
+#~ "fonctionnalité"
+
+#~ msgid "Multisite"
+#~ msgstr "Multisite"
+
+#~ msgid "Use this site as Support site"
+#~ msgstr "Utiliser ce site comme site de support"
+
+#~ msgid "Apply settings"
+#~ msgstr "Appliquer les changements"
+
+#~ msgid "An error occured !"
+#~ msgstr "Une erreur est survenue !"
+
+#~ msgid ""
+#~ "Support Ticket merge width ticket #%d : %s\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Ticket fusionné avec le ticket #%d : %s\n"
+#~ "%s"
+
+#~ msgid ""
+#~ "Congratulations !\n"
+#~ "You've been assigned to the Support Ticket #%1$s  by %2$s\n"
+#~ "\n"
+#~ "Subject: %3$s\n"
+#~ "Type : %4$s\n"
+#~ "Priority : %5$s\n"
+#~ "\n"
+#~ "Message:\n"
+#~ "%6$s\n"
+#~ "\n"
+#~ "---------------------------\n"
+#~ "Technical informations :\n"
+#~ "* Time: %7$s\n"
+#~ "* URL: %8$s\n"
+#~ "* Variables: %9$s\n"
+#~ "* Navigator: %10$s\n"
+#~ "\n"
+#~ "Regards,\n"
+#~ "The website %11$s\n"
+#~ "\n"
+#~ "Issue link : %12$s"
+#~ msgstr ""
+#~ "Félicitations !\n"
+#~ "Vous avez été assigné au ticket support #%1$s  par %2$s\n"
+#~ "\t\t  \n"
+#~ "Sujet: %3$s\n"
+#~ "Type : %4$s\n"
+#~ "Priorité : %5$s\n"
+#~ "\n"
+#~ "Message :\n"
+#~ "%6$s\n"
+#~ "\n"
+#~ "---------------------------\n"
+#~ "Informations techniques :\n"
+#~ "* Heure : %7$s\n"
+#~ "* URL : %8$s\n"
+#~ "* Variables : %9$s\n"
+#~ "* Navigateur : %10$s\n"
+#~ "\n"
+#~ "Cordialement,\n"
+#~ "Le site web %11$s\n"
+#~ "\n"
+#~ "Lien du ticket : %12$s"
+
+#~ msgid "[Support Ticket] #%d"
+#~ msgstr "[Tickets Support] #%d"
+
+#~ msgid "Error while assigning"
+#~ msgstr "Erreur pendant l'assignement"
+
+#~ msgid "Missing parameters"
+#~ msgstr "Paramètres manquants"
+
+#~ msgid "Anonymous user"
+#~ msgstr "Utilisateur anonyme"
+
+#~ msgid ""
+#~ "A new comment has been posted by %4$s.\n"
+#~ "Subject: %1$s\n"
+#~ "Comment:\n"
+#~ "%2$s\n"
+#~ "\n"
+#~ "--\n"
+#~ "Issue link : %3$s\n"
+#~ msgstr ""
+#~ "Un nouveau commentaire a été posté par %4$s.\n"
+#~ "Sujet : %1$s\n"
+#~ "Commentaire :\n"
+#~ "%2$s\n"
+#~ "\n"
+#~ "--\n"
+#~ "Lien du ticket : %3$s\n"
+
+#~ msgid "Comment is synchronised with the technical server."
+#~ msgstr ""
+#~ "Le commentaire n'a pas pu être synchronisé avec le serveur technique"
+
+#~ msgid "Comment could'nt be synchronised with the technical server."
+#~ msgstr ""
+#~ "Le commentaire n'a pas pu être synchronisé avec le serveur technique"
+
+#~ msgid "Comment is synchronised with the client."
+#~ msgstr "Le commentaire est synchronisé avec le client"
+
+#~ msgid "Comment could'nt be synchronised with the client."
+#~ msgstr "Le commentaire n'a pas pu être synchronisé avec le client"
+
+#~ msgid "Missing ticket ID"
+#~ msgstr "Identifiant de ticket manquant"
+
+#~ msgid "Support Ticket changed"
+#~ msgstr "Ticket support modifié"
+
+#~ msgid "Support Ticket closed"
+#~ msgstr "Tickets Support cloturé"
+
+#~ msgid "Support Ticket re-opened"
+#~ msgstr "Ticket support ré-ouvert"
+
+#~ msgid "Missing content... What did you want to do ?"
+#~ msgstr "Contenu manquant... Que vouliez vous faire ?"
+
+#~ msgid "Capabilities error !"
+#~ msgstr "Erreur de droits !"
+
+#~ msgid "Could'nt create ticket !"
+#~ msgstr "Le ticket n'a pu être créé !"
+
+#~ msgid ""
+#~ "[Support Ticket] New ticket report from %1$s (%2$s)\n"
+#~ "\n"
+#~ "Subject: %3$s\n"
+#~ "Type : %4$s\n"
+#~ "Priority : %5$s\n"
+#~ "\n"
+#~ "Message:\n"
+#~ "%6$s\n"
+#~ "\n"
+#~ "---------------------------\n"
+#~ "Technical informations :\n"
+#~ "* Time: %7$s\n"
+#~ "* URL: %8$s\n"
+#~ "* Variables: %9$s\n"
+#~ "* Navigator: %10$s\n"
+#~ "\n"
+#~ "Regards,\n"
+#~ "The website %11$s\n"
+#~ "\n"
+#~ "Issue link : %12$s"
+#~ msgstr ""
+#~ "[Ticket support] Nouveau ticket de %1$s (%2$s)\n"
+#~ " \n"
+#~ "Sujet : %3$s\n"
+#~ "Type : %4$s\n"
+#~ "Priorité : %5$s\n"
+#~ "\n"
+#~ "Message :\n"
+#~ "%6$s\n"
+#~ "\n"
+#~ "---------------------------\n"
+#~ "Informations techniques :\n"
+#~ "* Heure : %7$s\n"
+#~ "* URL : %8$s\n"
+#~ "* Variables : %9$s\n"
+#~ "* Navigateur : %10$s\n"
+#~ "\n"
+#~ "Cordialement,\n"
+#~ "Le site internet %11$s\n"
+#~ "\n"
+#~ "Lien du ticket : %12$s"
+
+#~ msgid "Report succesfully registered !"
+#~ msgstr "Signalement envoyé avec succès !"
+
+#~ msgid "An e-mail has been sent"
+#~ msgstr "Un courriel a été envoyé"
+
+#~ msgid "Report is synchronised with the technical server."
+#~ msgstr "Le rapport est synchronisé avec le serveur technique"
+
+#~ msgid "Report could'nt be synchronised with the technical server."
+#~ msgstr "Le rapport n'a pas pu être synchronisé avec le serveur technique"
+
+#~ msgid "Hi %s! Do you want to open a ticket about this page ?"
+#~ msgstr "Salut %s! Voulez vous ouvrir un ticket à propos de cette page ?"
+
+#~ msgid "From:"
+#~ msgstr "De:"
+
+#~ msgid "Priority:"
+#~ msgstr "Priorité :"
+
+#~ msgid "Report type:"
+#~ msgstr "Type de signalement :"
+
+#~ msgid "Visibility:"
+#~ msgstr "Visibilité :"
+
+#~ msgid "Why do you  open a ticket ?"
+#~ msgstr "Pourquoi ouvrez vous un ticket ?"
+
+#~ msgid "Title:"
+#~ msgstr "Titre :"
+
+#~ msgid "Description:"
+#~ msgstr "Description :"
+
+#~ msgid "Technical details:"
+#~ msgstr "Détails techniques :"
+
+#~ msgid "These informations will be sent with your report:"
+#~ msgstr "Ces informations vont être envoyées avec votre signalement :"
+
+#~ msgid "Page URL:"
+#~ msgstr "URL de la page :"
+
+#~ msgid "Variables:"
+#~ msgstr "Variables :"
+
+#~ msgid "Navigator:"
+#~ msgstr "Navigateur :"
+
+#~ msgid "Submit"
+#~ msgstr "Envoyer"
+
+#~ msgid "Cancel"
+#~ msgstr "Annuler"
+
+#~ msgid "Support !"
+#~ msgstr "Support !"
+
+#~ msgid "Contact technical support"
+#~ msgstr "Contacter le support tecnhique"
+
+#~ msgid "h"
+#~ msgstr "h"
+
+#~ msgid "min"
+#~ msgstr "min"
+
+#~ msgid "help"
+#~ msgstr "aide"
+
+#~ msgid "Help"
+#~ msgstr "Aide"
+
+#~ msgid "bug"
+#~ msgstr "bug"
+
+#~ msgid "Bug"
+#~ msgstr "Bug"
+
+#~ msgid "improvement"
+#~ msgstr "amelioration"
+
+#~ msgid "Improvement"
+#~ msgstr "Amélioration"
+
+#~ msgid "Submitted by:"
+#~ msgstr "Soumis par :"
+
+#~ msgid "System:"
+#~ msgstr "Système :"
+
+#~ msgid "Browser:"
+#~ msgstr "Navigateur :"
+
+#~ msgid "Standalone"
+#~ msgstr "Autonome"
+
+#~ msgid "Client"
+#~ msgstr "Client"
+
+#~ msgid "Server"
+#~ msgstr "Serveur"
+
+#~ msgid "Remote server"
+#~ msgstr "Serveur distant"
+
+#~ msgid "Remote token"
+#~ msgstr "Clé distante"
+
+#~ msgid "Local token"
+#~ msgstr "Clé locale"
+
+#~ msgid "Local URL"
+#~ msgstr "URL locale"
+
+#~ msgid "bugs"
+#~ msgstr "tickets"
+
+#~ msgid "Edit bug"
+#~ msgstr "Editer le ticket"
+
+#~ msgid "New bug"
+#~ msgstr "Nouveau ticket"
+
+#~ msgid "Preview bug"
+#~ msgstr "Aperçu du ticket"
+
+#~ msgid "Search a bug"
+#~ msgstr "Rechercher un ticket"
+
+#~ msgid "Parent bug"
+#~ msgstr "Ticket parent"
+
+#~ msgid "Bug types"
+#~ msgstr "Types de tickets"
+
+#~ msgid "Bug ticket"
+#~ msgstr "Ticket de bug"
+
+#~ msgid "Replies"
+#~ msgstr "Réponses"
+
+#~ msgid "[Bug report] #%d"
+#~ msgstr "[Rapport de bug] #%d"
+
+#~ msgid "Bug Ticket closed"
+#~ msgstr "Ticket support cloturé"
+
+#~ msgid "bug type"
+#~ msgstr "Type de tickets"
+
+#~ msgid "[Bug report] You've been assigned to Bug report #%d"
+#~ msgstr "[Ticket support] Vous avez été assigné au ticket support #%d"
+
+#~ msgid "[Bug report] New comment on Bug report #%d"
+#~ msgstr "[Ticket support] Nouveau commentaire sur le ticket support #%d"
+
+#~ msgid "Report a bug here !"
+#~ msgstr "Signaler un bug ici !"
+
+#~ msgid "Hi %s! Did you find a problem ?"
+#~ msgstr "Salut %s ! Vous avez trouvé un problème ?"
+
+#~ msgid "Describe the bug:"
+#~ msgstr "Décrivez le bug :"
