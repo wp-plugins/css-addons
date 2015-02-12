@@ -44,6 +44,12 @@ For coder webmasters, a free field let them put there own CSS.
 
 == Changelog ==
 
+= 1.1.0 =
+* add: alphabetical sort of addons
+* add: delete button in addons list
+* fix: remove slashes when saving addons
+* fix: stylesheet was not loaded if at least one of addons or custom CSS was empty
+
 = 1.0.0 =
 * Initial release
 

@@ -2,7 +2,7 @@
 /*
   Plugin Name: CSS Addons
   Description: Lets administrator add CSS addons to any theme
-  Version: 0.1
+  Version: 1.1.0
   Author: bastho
   Author URI: http://ba.stienho.fr
   License: GPLv2
@@ -74,7 +74,7 @@ class CSSAddons {
      * Core & usefull functions
      */
     function exists(){
-	return (count($this->addons) && !empty($this->custom));
+	return (count($this->addons) || !empty($this->custom));
     }
     function isnetwork(){
 	return (is_multisite() && is_plugin_active_for_network('css-addons/css.php'));
@@ -109,6 +109,9 @@ class CSSAddons {
     function admin_scripts(){
 	wp_enqueue_script('xorax_serialize', plugins_url('/xorax_serialize.js', __FILE__), '', '', true);
 	wp_enqueue_script('cssaddons', plugins_url('/addons.js', __FILE__), array('jquery'), '', true);
+	wp_localize_script('cssaddons', 'cssaddons', array(
+	    'remove_confirm' => __('Do you really want to remove this addon ?','css-addons'),
+	));
 	wp_enqueue_style('cssaddons', plugins_url('/addons.css', __FILE__),array(),max($this->current_version,$this->version));
     }
 
@@ -164,12 +167,18 @@ class CSSAddons {
 	foreach ($_POST['addons'] as $addon){
 	    if($this->is($addon,'slug') && $this->is($addon,'name') && $this->is($addon,'css')){
 		$available[esc_attr($addon['slug'])]=array(
-		    'name'=>  esc_attr($addon['name']),
-		    'description'=>esc_attr($addon['description']),
-		    'css'=>esc_attr($addon['css']),
+		    'name'=> stripslashes(esc_attr($addon['name'])),
+		    'description'=>stripslashes(esc_attr($addon['description'])),
+		    'css'=>stripslashes($addon['css']),
 		);
 	    }
 	}
+	$names=array();
+	foreach ($available as $addon_id => $addon) {
+	    $names[$addon_id]  = $addon['name'];
+	}
+	array_multisort($names, SORT_ASC, $available);
+
 	$this->option_update('CSS_Addons', $available);
 	$this->option_update('CSS_Addons_time',time());
 	wp_redirect(add_query_arg('confirm','saved',\filter_input(INPUT_POST,'_wp_http_referer',FILTER_SANITIZE_URL)));
@@ -194,6 +203,9 @@ class CSSAddons {
 		    </td>
 		    <td>
 			<textarea name="addons[<?php echo $this->i ?>][css]" class="widefat"><?php echo $css ?></textarea>
+		    </td>
+		    <td>
+			<span class="dashicons dashicons-trash"></span>
 		    </td>
 		</tr>
 	<?php

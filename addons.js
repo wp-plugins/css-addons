@@ -17,12 +17,20 @@ function str_replace(search,replace,subject){
     }
     return subject;
 }
+function cssaddons_refactor(){
+    jQuery('#css-addons-form span.dashicons-trash').unbind('click').click(function(){
+        if(confirm(cssaddons.remove_confirm)){
+            jQuery(this).parent().parent().hide(500,function(){jQuery(this).remove();});
+        }
+    });
+}
 
 jQuery(document).ready(function ($) {
     jQuery('#cssaddons_list input').change(function ($) {
         cssaddons_update();
     });
     cssaddons_update();
+    cssaddons_refactor();
 
 
     $('#css-addons-form a.button-default').click(function(){
@@ -32,6 +40,7 @@ jQuery(document).ready(function ($) {
         newrow.html(str_replace('addons['+(i-1)+']','addons['+(i)+']',newrow.html()));
         newrow.appendTo('#css-addons-form-list');
         $(this).data('id',i+1);
+        cssaddons_refactor();
         return false;
     });
 });
