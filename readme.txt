@@ -45,6 +45,10 @@ For coder webmasters, a free field let them put there own CSS.
 
 == Changelog ==
 
+= 1.2.0 =
+* add: Custom favicon support
+* fix: Improve tests before loading or not admin scripts
+
 = 1.1.0 =
 * add: alphabetical sort of addons
 * add: delete button in addons list

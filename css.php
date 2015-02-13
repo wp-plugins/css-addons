@@ -2,7 +2,7 @@
 /*
   Plugin Name: CSS Addons
   Description: Lets administrator add CSS addons to any theme
-  Version: 1.1.0
+  Version: 1.2.0
   Author: bastho
   Author URI: http://ba.stienho.fr
   License: GPLv2
@@ -17,6 +17,7 @@ if (!function_exists('is_plugin_active_for_network')) {
 }
 $CSSAddons = new CSSAddons();
 
+include_once (plugin_dir_path(__FILE__) . 'favicon.php');
 
 class CSSAddons {
 
@@ -59,6 +60,8 @@ class CSSAddons {
 	// Loader
 	add_action('init', array($this, 'load'));
 	add_action('wp_enqueue_scripts', array($this, 'scripts'),100);
+	add_action('admin_enqueue_scripts', array($this, 'admin_scripts'),100);
+	//a
 
 	// Customizer
 	add_action('customize_register', array($this, 'customize'));
@@ -88,8 +91,8 @@ class CSSAddons {
      * loads the settings as soon as there are ready
      */
     function load(){
-	$this->addons = $this->get_option('Addons');
-	$this->custom = $this->get_option('Custom');
+	$this->addons = $this->get_option('Addons',array());
+	$this->custom = $this->get_option('Custom',array());
 
 	// Check if addons have been updated
 	if($this->current_version < $this->version){
@@ -106,7 +109,10 @@ class CSSAddons {
 	    wp_enqueue_style('css-addons', $this->static_url, false, null);
 	}
     }
-    function admin_scripts(){
+    function admin_scripts($hook_suffix){
+	if('widgets.php'!=$hook_suffix && 'customizer.php'!=$hook_suffix && 'settings_page_css_addons_available_manage'!=$hook_suffix){
+	    return;
+	}
 	wp_enqueue_script('xorax_serialize', plugins_url('/xorax_serialize.js', __FILE__), '', '', true);
 	wp_enqueue_script('cssaddons', plugins_url('/addons.js', __FILE__), array('jquery'), '', true);
 	wp_localize_script('cssaddons', 'cssaddons', array(
@@ -216,7 +222,6 @@ class CSSAddons {
      * outputs settings page
      */
     function available_manage() {
-	$this->admin_scripts();
 	if (\filter_input(INPUT_GET,'confirm') == 'saved') {?>
 	    <div class="updated"><p><?php _e('Available CSS addons have been saved !', 'css-addons') ?></p></div>
 	<?php }	?>
@@ -350,8 +355,7 @@ function CSSAddons_register_controls() {
 	public function render_content() {
 	    global $CSSAddons;
 	    $addons_available = $CSSAddons->get_addons();
-	    $addons_enabled = $CSSAddons->addons;
-	    $CSSAddons->admin_scripts();
+	    $addons_enabled = (array) $CSSAddons->addons;
 	    ?>
 	    <span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
 	    <textarea  <?php $this->link(); ?>><?php echo $this->value(); ?></textarea>
@@ -359,7 +363,7 @@ function CSSAddons_register_controls() {
 			<?php foreach ($addons_available as $addon_id => $addon): ?>
 		    <li><label>
 			    <input type="checkbox" value="<?php echo $addon_id; ?>" <?php echo checked(in_array($addon_id,$addons_enabled),true)  ?>>
-			    <h4><?php echo $addon['name']; ?></h4>
+			    <strong><?php echo $addon['name']; ?></strong>
 		    <?php echo ($addon['description'] != '') ? '<p>' . $addon['description'] . '</p>' : ''; ?>
 			</label></li>
 	    <?php endforeach; ?>
