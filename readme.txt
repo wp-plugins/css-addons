@@ -31,6 +31,8 @@ It adds the list of addons in the customize view (under appearance) and webmaste
 That's it.
 For coder webmasters, a free field let them put there own CSS.
 
+Site admins can also set there own favicon
+
 
 == Installation ==
 
