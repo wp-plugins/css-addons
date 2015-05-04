@@ -2,7 +2,7 @@
 /*
   Plugin Name: CSS Addons
   Description: Lets administrator add CSS addons to any theme
-  Version: 1.2.0
+  Version: 1.2.1
   Author: bastho
   Author URI: http://ba.stienho.fr
   License: GPLv2
@@ -50,13 +50,6 @@ class CSSAddons {
 	$this->option_update = 'update_' . ($this->isnetwork() ? 'site_' : '') . 'option';
 	$this->option_cap = 'manage_' . ($this->isnetwork() ? 'network_' : '') . 'options';
 
-	// Static location
-	$upload_dir = wp_upload_dir();
-	$this->static_path=$upload_dir['basedir'].'/css-addons.css';
-	$this->static_url=$upload_dir['baseurl'].'/css-addons.css';
-	$this->version = $this->option_get('CSS_Addons_time');
-	$this->current_version = filemtime ($this->static_path);
-
 	// Loader
 	add_action('init', array($this, 'load'));
 	add_action('wp_enqueue_scripts', array($this, 'scripts'),100);
@@ -70,7 +63,6 @@ class CSSAddons {
 	// Admin
 	add_action('admin_post_cssaddons_saveoptions', array(&$this, 'available_save'));
 	add_action(($this->isnetwork()?'network_':'').'admin_menu', array(&$this, 'menu'));
-
     }
 
     /*
@@ -91,6 +83,15 @@ class CSSAddons {
      * loads the settings as soon as there are ready
      */
     function load(){
+	// Static location
+	$upload_dir = wp_upload_dir();
+	$this->static_path=$upload_dir['basedir'].'/css-addons.css';
+	$base_url = $upload_dir['baseurl'].'/css-addons.css';
+	$exploded_url = parse_url($base_url);
+	$this->static_url=site_url().$exploded_url['path'];
+	$this->version = $this->option_get('CSS_Addons_time');
+	$this->current_version = filemtime ($this->static_path);
+
 	$this->addons = $this->get_option('Addons',array());
 	$this->custom = $this->get_option('Custom',array());
 
