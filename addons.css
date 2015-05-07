@@ -1,24 +1,24 @@
 
 
 /** CUSTOMIZATION **/
-#customize-control-CSS_Addons textarea{
+.css-addons-textarea{
     display:none;
 }
 
-#cssaddons_list li{
+.css-addons-list li{
     position:relative;
     padding-left:20px;
 }
-#cssaddons_list input{
+.css-addons-list input{
     position:absolute;
     top:4px;
     left:2px;
 }
-#cssaddons_list h4,#cssaddons_list p,#cssaddons_list span{
+.css-addons-list h4,.css-addons-list p,.css-addons-list span{
     display:block;
     margin:0 0.4em;
 }
-#cssaddons_list span{
+.css-addons-list span{
     color:#AAA;
 }
 

@@ -2,7 +2,7 @@
 Contributors: bastho
 Tags: css, style, theme, customization
 Requires at least: 3.1
-Tested up to: 4.2.1
+Tested up to: 4.2.2
 Donate link: http://ba.stienho.fr/#don
 Stable tag: /trunk
 License: GPLv2
@@ -46,6 +46,9 @@ Site admins can also set there own favicon
 2. Customizer view
 
 == Changelog ==
+
+= 1.3.0 =
+* Add: Librairies, started with bootsrap
 
 = 1.2.1 =
 * Fix: Correct URL when domain mapping is active

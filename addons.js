@@ -1,15 +1,16 @@
 
 function cssaddons_update() {
-    var csspis = {};
-    var i = 0;
-    jQuery('#cssaddons_list input').each(function ($) {
-        if (jQuery(this).is(':checked')) {
-            csspis[i] = jQuery(this).val();
-            i++;
-        }
+    jQuery('.css-addons-control').each(function(){
+        var csspis = {};
+        var i = 0;
+        jQuery(this).find('.css-addons-list input').each(function ($) {
+            if (jQuery(this).is(':checked')) {
+                csspis[i] = jQuery(this).val();
+                i++;
+            }
+        });
+        jQuery(this).find('.css-addons-textarea').val(serialize(csspis)).trigger("change");
     });
-
-    jQuery('#customize-control-CSS_Addons textarea').val(serialize(csspis)).trigger("change");
 }
 function str_replace(search,replace,subject){
     while(subject.indexOf(search)>-1){
@@ -26,7 +27,7 @@ function cssaddons_refactor(){
 }
 
 jQuery(document).ready(function ($) {
-    jQuery('#cssaddons_list input').change(function ($) {
+    jQuery('.css-addons-list input').change(function ($) {
         cssaddons_update();
     });
     cssaddons_update();

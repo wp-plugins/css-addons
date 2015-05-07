@@ -2,7 +2,7 @@
 /*
   Plugin Name: CSS Addons
   Description: Lets administrator add CSS addons to any theme
-  Version: 1.2.1
+  Version: 1.3.0
   Author: bastho
   Author URI: http://ba.stienho.fr
   License: GPLv2
@@ -26,11 +26,14 @@ class CSSAddons {
     var $option_cap;
     var $addons;
     var $custom;
+    var $libs;
     var $static_path;
     var $static_url;
     var $i=0;
     var $version;
     var $current_version;
+    var $libs_path;
+    var $libs_list;
 
     public function __call($method, $args){
 	if($method == "option_get"){
@@ -49,6 +52,8 @@ class CSSAddons {
 	$this->option_get = 'get_' . ($this->isnetwork() ? 'site_' : '') . 'option';
 	$this->option_update = 'update_' . ($this->isnetwork() ? 'site_' : '') . 'option';
 	$this->option_cap = 'manage_' . ($this->isnetwork() ? 'network_' : '') . 'options';
+
+	$this->libs_path=plugin_dir_path(__FILE__) . 'libs/';
 
 	// Loader
 	add_action('init', array($this, 'load'));
@@ -92,7 +97,11 @@ class CSSAddons {
 	$this->version = $this->option_get('CSS_Addons_time');
 	$this->current_version = filemtime ($this->static_path);
 
+	$this->libs_list=$this->lib_scan();
+	print_r($this->libs);
+
 	$this->addons = $this->get_option('Addons',array());
+	$this->libs = $this->get_option('Libs',array());
 	$this->custom = $this->get_option('Custom',array());
 
 	// Check if addons have been updated
@@ -109,6 +118,9 @@ class CSSAddons {
 	if($this->exists()){
 	    wp_enqueue_style('css-addons', $this->static_url, false, null);
 	}
+	foreach ($this->libs as $lib){
+	    $this->lib_load($lib);
+	}
     }
     function admin_scripts($hook_suffix){
 	if('widgets.php'!=$hook_suffix && 'customizer.php'!=$hook_suffix && 'settings_page_css_addons_available_manage'!=$hook_suffix){
@@ -120,6 +132,37 @@ class CSSAddons {
 	    'remove_confirm' => __('Do you really want to remove this addon ?','css-addons'),
 	));
 	wp_enqueue_style('cssaddons', plugins_url('/addons.css', __FILE__),array(),max($this->current_version,$this->version));
+    }
+    function lib_load($library){
+	if(!isset($this->libs_list[$library])){
+	    return;
+	}
+	foreach ($this->libs_list[$library] as $file_name=>$file_url){
+	    if(!is_file($this->libs_path.$library.'/'.$file_name)){
+		continue;
+	    }
+	    $file_extension = strtolower(substr(strrchr($file_name,"."),1));
+	    if($file_extension=='css'){
+		wp_enqueue_style('css-addons-'.$library.'-'.$file_name, $file_url, false, null);
+	    }
+	    elseif($file_extension=='js'){
+		wp_enqueue_script('css-addons-'.$library.'-'.$file_name, $file_url, array(), '', true);
+	    }
+	}
+
+    }
+    function lib_scan($dir=''){
+	$libs=array();
+	$directories = scandir($this->libs_path.$dir);
+	foreach($directories as $entry){
+	    if($entry!='.' && $entry!='..' && is_dir($this->libs_path.$dir.$entry)){
+		$libs[$entry]=$this->lib_scan($entry.'/');
+	    }
+	    elseif(is_file($this->libs_path.$dir.$entry)){
+		$libs[$entry]=plugins_url('libs/'.$dir.$entry, __FILE__);
+	    }
+	}
+	return $libs;
     }
 
 
@@ -314,6 +357,18 @@ class CSSAddons {
 	    'settings' => 'CSS_Addons',
 	)));
 
+	// Librairies list
+	$wp_customize->add_setting('CSS_Libs', array(
+	    'default' => '',
+	    'transport' => 'postMessage'
+	));
+
+	$wp_customize->add_control(new CSS_libs_Control($wp_customize, 'CSS_Libs', array(
+	    'label' => __('CSS librairies', 'css-addons'),
+	    'section' => 'css_addons_section',
+	    'settings' => 'CSS_Libs',
+	)));
+
 	// Custom CSS
 	$wp_customize->add_setting('CSS_Custom', array(
 	    'default' => '',
@@ -359,8 +414,9 @@ function CSSAddons_register_controls() {
 	    $addons_enabled = (array) $CSSAddons->addons;
 	    ?>
 	    <span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
-	    <textarea  <?php $this->link(); ?>><?php echo $this->value(); ?></textarea>
-	    <ul id="cssaddons_list">
+	    <div class="css-addons-control">
+	    <textarea <?php $this->link(); ?> class="css-addons-textarea"><?php echo $this->value(); ?></textarea>
+	    <ul id="cssaddons_list" class="css-addons-list">
 			<?php foreach ($addons_available as $addon_id => $addon): ?>
 		    <li><label>
 			    <input type="checkbox" value="<?php echo $addon_id; ?>" <?php echo checked(in_array($addon_id,$addons_enabled),true)  ?>>
@@ -369,6 +425,31 @@ function CSSAddons_register_controls() {
 			</label></li>
 	    <?php endforeach; ?>
 	    </ul>
+	    </div>
+	    <?php
+	}
+    }
+
+    class CSS_libs_Control extends WP_Customize_Control {
+
+	public $type = 'csslib';
+
+	public function render_content() {
+	    global $CSSAddons;
+	    $libs_enabled = (array) $CSSAddons->libs;
+	    ?>
+	    <span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
+	    <div class="css-addons-control">
+	    <textarea <?php $this->link(); ?> class="css-addons-textarea"><?php echo $this->value(); ?></textarea>
+	    <ul id="csslibs_list" class="css-addons-list">
+			<?php foreach ($CSSAddons->libs_list as $lib => $files): ?>
+		    <li><label>
+			    <input type="checkbox" value="<?php echo $lib; ?>" <?php echo checked(in_array($lib,$libs_enabled),true)  ?>>
+			    <strong><?php echo ucfirst($lib); ?></strong>
+			</label></li>
+	    <?php endforeach; ?>
+	    </ul>
+	    </div>
 	    <?php
 	}
     }
