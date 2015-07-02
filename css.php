@@ -2,7 +2,7 @@
 /*
   Plugin Name: CSS Addons
   Description: Lets administrator add CSS addons to any theme
-  Version: 1.3.0
+  Version: 1.3.1
   Author: bastho
   Author URI: http://ba.stienho.fr
   License: GPLv2
@@ -57,7 +57,7 @@ class CSSAddons {
 
 	// Loader
 	add_action('init', array($this, 'load'));
-	add_action('wp_enqueue_scripts', array($this, 'scripts'),100);
+	add_action('wp_enqueue_scripts', array($this, 'scripts'),900);
 	add_action('admin_enqueue_scripts', array($this, 'admin_scripts'),100);
 	//a
 
