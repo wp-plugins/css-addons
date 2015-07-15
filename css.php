@@ -2,7 +2,7 @@
 /*
   Plugin Name: CSS Addons
   Description: Lets administrator add CSS addons to any theme
-  Version: 1.3.1
+  Version: 1.3.2
   Author: bastho
   Author URI: http://ba.stienho.fr
   License: GPLv2
@@ -95,7 +95,7 @@ class CSSAddons {
 	$exploded_url = parse_url($base_url);
 	$this->static_url=site_url().$exploded_url['path'];
 	$this->version = $this->option_get('CSS_Addons_time');
-	$this->current_version = filemtime ($this->static_path);
+	$this->current_version = is_file($this->static_path)?filemtime ($this->static_path):0;
 
 	$this->libs_list=$this->lib_scan();
 	print_r($this->libs);
@@ -118,6 +118,9 @@ class CSSAddons {
 	if($this->exists()){
 	    wp_enqueue_style('css-addons', $this->static_url, false, null);
 	}
+        if(!is_array($this->libs)){
+            return;
+        }
 	foreach ($this->libs as $lib){
 	    $this->lib_load($lib);
 	}

@@ -47,6 +47,9 @@ Site admins can also set there own favicon
 
 == Changelog ==
 
+= 1.3.2 = 
+* Fix: Remove some PHP warnings
+
 = 1.3.1 = 
 * Fix: Later load of script
 
