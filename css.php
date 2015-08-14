@@ -2,7 +2,7 @@
 /*
   Plugin Name: CSS Addons
   Description: Lets administrator add CSS addons to any theme
-  Version: 1.3.2
+  Version: 1.3.3
   Author: bastho
   Author URI: http://ba.stienho.fr
   License: GPLv2
@@ -45,7 +45,7 @@ class CSSAddons {
     }
 
     //Load plugin
-    function CSSAddons() {
+    function __construct() {
 	load_plugin_textdomain('css-addons', false, 'css-addons/languages');
 
 	// Check environment
@@ -68,6 +68,11 @@ class CSSAddons {
 	// Admin
 	add_action('admin_post_cssaddons_saveoptions', array(&$this, 'available_save'));
 	add_action(($this->isnetwork()?'network_':'').'admin_menu', array(&$this, 'menu'));
+    }
+    
+    //PHP4 constructor
+    public function CSSAddons(){
+        $this->__construct();
     }
 
     /*
