@@ -47,6 +47,10 @@ Site admins can also set there own favicon
 
 == Changelog ==
 
+= 1.4.0 = 
+* Remove favicon feature since it's natively supported by WP 4.3+
+* Update french localization
+
 = 1.3.3 = 
 * WP 4.3 compliant
 
@@ -76,6 +80,9 @@ Site admins can also set there own favicon
 * Initial release
 
 == Upgrade notice ==
+
+= 1.4.0 =
+The favicon feature is removed, WordPress now has it's own.
 
 == Languages ==
 

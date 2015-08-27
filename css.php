@@ -2,7 +2,7 @@
 /*
   Plugin Name: CSS Addons
   Description: Lets administrator add CSS addons to any theme
-  Version: 1.3.3
+  Version: 1.4.0
   Author: bastho
   Author URI: http://ba.stienho.fr
   License: GPLv2
@@ -16,8 +16,6 @@ if (!function_exists('is_plugin_active_for_network')) {
     // Makes sure the plugin is defined before trying to use it
 }
 $CSSAddons = new CSSAddons();
-
-include_once (plugin_dir_path(__FILE__) . 'favicon.php');
 
 class CSSAddons {
 
