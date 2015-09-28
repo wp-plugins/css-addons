@@ -47,6 +47,10 @@ Site admins can also set there own favicon
 
 == Changelog ==
 
+= 1.5.0 = 
+* Add CSS highligthing in editor
+* Add customizer preview support
+
 = 1.4.0 = 
 * Remove favicon feature since it's natively supported by WP 4.3+
 * Update french localization

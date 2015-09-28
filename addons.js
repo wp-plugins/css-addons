@@ -1,4 +1,4 @@
-
+var CssAddonsCodeMirror=[];
 function cssaddons_update() {
     jQuery('.css-addons-control').each(function(){
         var csspis = {};
@@ -25,6 +25,24 @@ function cssaddons_refactor(){
         }
     });
 }
+function cssaddons_editor(who){
+    if(CodeMirror){
+        CssAddonsCodeMirror[CssAddonsCodeMirror.length] = CodeMirror.fromTextArea(
+            who, 
+                {
+                    lineNumbers: true,
+                    extraKeys: {"Ctrl-Space": "autocomplete"},
+                    mode: 'text/css'
+                }
+            );
+        cminstance = CssAddonsCodeMirror.length-1;
+        //CssAddonsCodeMirror[cminstance].showHint('css');
+        CssAddonsCodeMirror[cminstance].on('change', function(what){
+            jQuery(what.getTextArea()).val(what.getValue()).trigger('change');
+        });
+    }
+    return false;
+}
 
 jQuery(document).ready(function ($) {
     jQuery('.css-addons-list input').change(function ($) {
@@ -32,8 +50,10 @@ jQuery(document).ready(function ($) {
     });
     cssaddons_update();
     cssaddons_refactor();
-
-
+    $('.cssaddons-multi-editor').each(function(){
+        cssaddons_editor(document.getElementById($(this).attr('id')));
+    });
+    
     $('#css-addons-form a.button-default').click(function(){
         i = $(this).data('id');
         newrow = $('#css-addons-form-list tr').last().clone();

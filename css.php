@@ -55,19 +55,19 @@ class CSSAddons {
 
 	// Loader
 	add_action('init', array($this, 'load'));
-	add_action('wp_enqueue_scripts', array($this, 'scripts'),900);
-	add_action('admin_enqueue_scripts', array($this, 'admin_scripts'),100);
-	//a
+	add_action('wp_enqueue_scripts', array(&$this, 'scripts'),900);
+	add_action('admin_enqueue_scripts', array(&$this, 'admin_scripts'),100);
+        add_action( 'customize_preview_init', array(&$this, 'customizer_scripts'), 100 );
 
 	// Customizer
-	add_action('customize_register', array($this, 'customize'));
-	add_action('customize_save_after', array($this, 'save'));
+	add_action('customize_register', array(&$this, 'customize'));
+	add_action('customize_save_after', array(&$this, 'save'));
 
 	// Admin
 	add_action('admin_post_cssaddons_saveoptions', array(&$this, 'available_save'));
 	add_action(($this->isnetwork()?'network_':'').'admin_menu', array(&$this, 'menu'));
     }
-    
+
     //PHP4 constructor
     public function CSSAddons(){
         $this->__construct();
@@ -101,7 +101,6 @@ class CSSAddons {
 	$this->current_version = is_file($this->static_path)?filemtime ($this->static_path):0;
 
 	$this->libs_list=$this->lib_scan();
-	print_r($this->libs);
 
 	$this->addons = $this->get_option('Addons',array());
 	$this->libs = $this->get_option('Libs',array());
@@ -132,13 +131,28 @@ class CSSAddons {
 	if('widgets.php'!=$hook_suffix && 'customizer.php'!=$hook_suffix && 'settings_page_css_addons_available_manage'!=$hook_suffix){
 	    return;
 	}
+        wp_enqueue_style('codemirror', plugins_url('/CodeMirror/lib/codemirror.css', __FILE__), false, null);
+        wp_enqueue_style('codemirror-show-hint', plugins_url('/CodeMirror/addon/hint/show-hint.css', __FILE__), false, null);
+
+        wp_enqueue_script('codemirror', plugins_url('/CodeMirror/lib/codemirror.js', __FILE__), '', '', true);
+        wp_enqueue_script('codemirror-css', plugins_url('/CodeMirror/mode/css/css.js', __FILE__), array('codemirror'), '', true);
+        wp_enqueue_script('codemirror-show-hint', plugins_url('/CodeMirror/addon/hint/show-hint.js', __FILE__), array('codemirror'), '', true);
+        wp_enqueue_script('codemirror-css-hint', plugins_url('/CodeMirror/addon/hint/css-hint.js', __FILE__), array('codemirror'), '', true);
 	wp_enqueue_script('xorax_serialize', plugins_url('/xorax_serialize.js', __FILE__), '', '', true);
-	wp_enqueue_script('cssaddons', plugins_url('/addons.js', __FILE__), array('jquery'), '', true);
+	wp_enqueue_script('cssaddons', plugins_url('/addons.js', __FILE__), array('jquery','codemirror'), '', true);
 	wp_localize_script('cssaddons', 'cssaddons', array(
 	    'remove_confirm' => __('Do you really want to remove this addon ?','css-addons'),
 	));
 	wp_enqueue_style('cssaddons', plugins_url('/addons.css', __FILE__),array(),max($this->current_version,$this->version));
     }
+    function customizer_scripts() {
+	wp_enqueue_script('xorax_serialize', plugins_url('/xorax_serialize.js', __FILE__), '', '', true);
+	wp_enqueue_script( 'cssaddons_customizer', plugins_url('/customizer.js', __FILE__), array( 'customize-preview' ), time(), true );
+        wp_localize_script('cssaddons_customizer', 'cssaddons_customizer', array(
+	    'addons'=>$this->get_addons()
+	));
+    }
+
     function lib_load($library){
 	if(!isset($this->libs_list[$library])){
 	    return;
@@ -258,7 +272,12 @@ class CSSAddons {
 			<input type="text" name="addons[<?php echo $this->i ?>][description]" class="widefat" value="<?php echo $desc ?>">
 		    </td>
 		    <td>
-			<textarea name="addons[<?php echo $this->i ?>][css]" class="widefat"><?php echo $css ?></textarea>
+                        <a class="thickbox" href="#TB_inline?width=900&height=600&inlineId=cssaddons-box-<?php echo $this->i; ?>">
+                            <?php echo substr($css, 0, 30); ?>...
+                        </a>
+                        <div id="cssaddons-box-<?php echo $this->i; ?>" style="display: none;">
+			<textarea name="addons[<?php echo $this->i ?>][css]" class="widefat cssaddons-multi-editor" id="cssaddons-textarea-<?php echo $this->i; ?>"><?php echo $css ?></textarea>
+                        </div>
 		    </td>
 		    <td>
 			<span class="dashicons dashicons-trash"></span>
@@ -274,7 +293,9 @@ class CSSAddons {
     function available_manage() {
 	if (\filter_input(INPUT_GET,'confirm') == 'saved') {?>
 	    <div class="updated"><p><?php _e('Available CSS addons have been saved !', 'css-addons') ?></p></div>
-	<?php }	?>
+	<?php }
+        add_thickbox();
+        ?>
 	<div class="wrap">
 	    <div class="icon32" id="icon-cssaddons"><br></div>
 	    <h2><?php _e('Available CSS addons', 'css-addons'); ?></h2>
@@ -399,16 +420,18 @@ function CSSAddons_register_controls() {
     class CSS_addons_textarea_control extends WP_Customize_Control {
 
 	public $type = 'textarea';
-
 	public function render_content() {
 	    ?>
 	    <label>
 	        <span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
-	        <textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea($this->value()); ?></textarea>
 	    </label>
-	    <?php
+            <textarea rows="5" style="width:100%;" <?php $this->link(); ?> id="cssaddons-custom-css"  onfocus="cssaddons_editor(this);"><?php echo esc_textarea($this->value()); ?></textarea>
+            <div id="cssaddons-custom-css-editor"></div>
+                <?php
 	}
     }
+
+
 
     class CSS_addons_Control extends WP_Customize_Control {
 
