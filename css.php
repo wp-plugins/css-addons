@@ -2,7 +2,7 @@
 /*
   Plugin Name: CSS Addons
   Description: Lets administrator add CSS addons to any theme
-  Version: 1.4.0
+  Version: 1.5.0
   Author: bastho
   Author URI: http://ba.stienho.fr
   License: GPLv2
