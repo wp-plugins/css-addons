@@ -13,6 +13,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 == Description ==
 
 This plugin is for you if :
+
 * You know CSS
 * Dont have legitimity to apply it or manage a multisite network
 * You work with webmasters wich want to customize WP but think that CSS means Custom Super Style
@@ -24,7 +25,7 @@ The power user can create a set of CSS rules readable for humans with :
 * slug
 * name
 * descrition
-* CSS
+* CSS code
 
 It adds the list of addons in the customize view (under appearance) and webmaster just have to check the ones they want.
 That's it.
