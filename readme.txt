@@ -8,7 +8,7 @@ Stable tag: /trunk
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-  Description: Lets administrator add CSS addons to any theme
+Description: Lets administrator add CSS addons to any theme
 
 == Description ==
 
@@ -45,6 +45,10 @@ For coder webmasters, a free field let them put there own CSS in a code-highligh
 3. New editor (since 1.5)
 
 == Changelog ==
+
+= 1.5.1 = 
+* Bug fix in thickbox
+* Added .pot file
 
 = 1.5.0 = 
 * Add CSS highligthing in editor

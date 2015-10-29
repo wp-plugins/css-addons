@@ -21,5 +21,7 @@
 .css-addons-list span{
     color:#AAA;
 }
-
-
+/** Thickbox **/
+#TB_ajaxContent .CodeMirror pre{
+    padding: 0 32px;
+}

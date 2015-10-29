@@ -2,7 +2,7 @@
 /*
   Plugin Name: CSS Addons
   Description: Lets administrator add CSS addons to any theme
-  Version: 1.5.0
+  Version: 1.5.1
   Author: bastho
   Author URI: http://ba.stienho.fr
   License: GPLv2
@@ -272,7 +272,7 @@ class CSSAddons {
 			<input type="text" name="addons[<?php echo $this->i ?>][description]" class="widefat" value="<?php echo $desc ?>">
 		    </td>
 		    <td>
-                        <a class="thickbox" href="#TB_inline?width=900&height=600&inlineId=cssaddons-box-<?php echo $this->i; ?>">
+                        <a id="cssaddons-preview-<?php echo $this->i; ?>" class="thickbox" href="#TB_inline?width=900&height=600&inlineId=cssaddons-box-<?php echo $this->i; ?>">
                             <?php echo substr($css, 0, 30); ?>...
                         </a>
                         <div id="cssaddons-box-<?php echo $this->i; ?>" style="display: none;">

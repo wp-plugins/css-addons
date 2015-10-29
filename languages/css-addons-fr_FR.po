@@ -1,74 +1,71 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CSSAddons\n"
-"POT-Creation-Date: 2015-08-27 12:11+0100\n"
-"PO-Revision-Date: 2015-08-27 12:12+0100\n"
+"POT-Creation-Date: 2015-10-29 14:05+0100\n"
+"PO-Revision-Date: 2015-10-29 14:05+0100\n"
 "Last-Translator: Bastien Ho <bastienho@urbancube.fr>\n"
-"Language-Team: bastho <bastienho@urbancube.fr>\n"
+"Language-Team: bastho <b@stienho.fr>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.4\n"
 "X-Poedit-KeywordsList: _;_e;__\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: ..\n"
-"X-Poedit-SearchPath-1: .\n"
-"X-Poedit-SearchPathExcluded-0: ../xorax_serialize.js\n"
 
-#: ../css.php:138
+#: ../css.php:144
 msgid "Do you really want to remove this addon ?"
 msgstr "Voulez vous vraiment supprimer ce greffon ?"
 
-#: ../css.php:197 ../css.php:350 ../css.php:361
+#: ../css.php:211 ../css.php:371 ../css.php:382
 msgid "CSS addons"
 msgstr "Greffons CSS"
 
-#: ../css.php:217
+#: ../css.php:231
 msgid "What are you doing over there ?"
 msgstr "Que faites vous ici ?"
 
-#: ../css.php:220
+#: ../css.php:234
 msgid "Security error"
 msgstr "Erreur de sécurité"
 
-#: ../css.php:276
+#: ../css.php:295
 msgid "Available CSS addons have been saved !"
 msgstr "Les greffons CSS disponibles ont été sauvegardés !"
 
-#: ../css.php:280
+#: ../css.php:301
 msgid "Available CSS addons"
 msgstr "Greffons CSS disponibles"
 
-#: ../css.php:287
+#: ../css.php:308
 msgid "Slug"
 msgstr "Identifiant"
 
-#: ../css.php:288
+#: ../css.php:309
 msgid "Name"
 msgstr "Nom"
 
-#: ../css.php:289
+#: ../css.php:310
 msgid "Description"
 msgstr "Description"
 
-#: ../css.php:290
+#: ../css.php:311
 msgid "CSS"
 msgstr "CSS"
 
-#: ../css.php:308
+#: ../css.php:329
 msgid "Add"
 msgstr "Ajouter"
 
-#: ../css.php:309
+#: ../css.php:330
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: ../css.php:373
+#: ../css.php:394
 msgid "CSS librairies"
 msgstr "Bibliothèques CSS"
 
-#: ../css.php:384
+#: ../css.php:405
 msgid "Custom CSS"
 msgstr "CSS personnalisée"
 
